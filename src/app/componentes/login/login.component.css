@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Girassol|Josefin+Sans&display=swap');
 
 form {
-    border: 10px solid #f1f1f1;
-    padding: 10px;
-    background:gray;
+    border: 10px solid #daf107;
+    padding: 5px;
+    background:rgb(255, 254, 254);
+    
 }
 
 input[type=text], input[type=password] {
@@ -10,18 +12,20 @@ input[type=text], input[type=password] {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(102, 47, 165);
     box-sizing: border-box;
 }
 
 button {
-    background-color: #4CAF50;
-    color: white;
+    
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
     width: 100%;
+}
+.medio{
+    width: 50%;
 }
 
 button:hover {
@@ -40,21 +44,59 @@ button:hover {
 }
 .imgcontainer {
     text-align: center;
-    margin: 24px 0 12px 0;
+    margin: 12px 0 6px 0;
 }
 
 img.avatar {
-    width: 40%;
+    width: 20%;
     border-radius: 50%;
 }
 
 .container {
-    padding: 16px;
+    /*padding: 5px;
+    /*width: -150v;
+    width: 80%; height: 80%;
+    position: center;
+    justify-content: center;
+    align-items: center;*/
+    width: 500px; margin: 0 auto;
+    left: 50vmin;
+    right: 50vmin;
+    top: 100%; /*centrar*/
+    
+}
+
+.jumbotron{
+    /*width: 80%;
+    height: 80%;
+    position: center;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    display: flex;*/
+    padding: -10px;
+    
+    margin: 5px 0;
+    width: 112%;
+    height: 112%;
+    left: 50vmin;
+    right: 50vmin;
+    top: 100%; /*centrar*/
+    margin-left: -50px;
+    margin-top: -50px;
+    
 }
 
 span.psw {
-    float: right;
+    float: unset;
     padding-top: 16px;
+}
+
+h1{
+    font-family: 'Girassol', cursive;
+}
+label{
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 /* Change styles for span and cancel button on extra small screens */

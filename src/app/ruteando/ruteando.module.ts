@@ -24,7 +24,7 @@ import { JugadoresListadoComponent } from '../componentes/jugadores-listado/juga
 
 
 // declaro donde quiero que se dirija
-const MiRuteo = [
+const MiRuteo: Routes = [
 {path: 'Jugadores' , component: JugadoresListadoComponent},
 {path: '' , component: PrincipalComponent},
 {path: 'Login' , component: LoginComponent},
@@ -38,8 +38,9 @@ const MiRuteo = [
 { path: 'Juegos' ,
 component: JuegosComponent ,
 children:
-     [{path: '' , component: MenuCardComponent},
-     {path: 'Adivina' , component: AdivinaElNumeroComponent},
+     [
+       {path: '' , component: MenuCardComponent},
+      {path: 'Adivina' , component: AdivinaElNumeroComponent},
       {path: 'AdivinaMasListado' , component: AdivinaMasListadoComponent},
       {path: 'AgilidadaMasListado' , component: AgilidadMasListadoComponent},
       {path: 'Agilidad' , component: AgilidadAritmeticaComponent}]
