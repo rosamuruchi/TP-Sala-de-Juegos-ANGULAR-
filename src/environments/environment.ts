@@ -6,3 +6,14 @@
 export const environment = {
   production: false
 };
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyBov2jfLd4j4QQdxfcrjgqf4QolXQScEcs",
+    authDomain: "loginionic-8cfd3.firebaseapp.com",
+    databaseURL: "https://loginionic-8cfd3.firebaseio.com",
+    projectId: "loginionic-8cfd3",
+    storageBucket: "loginionic-8cfd3.appspot.com",
+    messagingSenderId: "882291151174",
+    appId: "1:882291151174:web:c2d3d622a3426e85a15547",
+    measurementId: "G-HJX07Z793L"
+};

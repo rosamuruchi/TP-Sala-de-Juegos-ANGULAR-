@@ -23,9 +23,9 @@ p,a {font-size: 16px;
     font-family: 'Khand', sans-serif;
 color: white;}
 
-.footer-p{
+.footer-p :hover{
+    font-family: 'Great Vibes', cursive;
     font-size: 16px;
-    font-family: 'Khand', sans-serif;
     color: rgb(7, 7, 7);
 }
 
@@ -99,7 +99,10 @@ color: white;}
     background-color: rgb(0, 197, 154);
     
     text-align: center;
+    
 }
+
+
 
 h2{
     font-family: 'Open Sans', sans-serif;

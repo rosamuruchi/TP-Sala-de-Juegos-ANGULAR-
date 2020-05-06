@@ -55,6 +55,20 @@ import { InputJugadoresComponent } from './componentes/input-jugadores/input-jug
 import { SexoPipe } from './pipes/sexo.pipe';
 import { InicioComponent } from './componentes/inicio/inicio.component';
 
+import { firebaseConfig } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+//import { HttpService } from './Services/http.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { TatetiComponent } from './componentes/tateti/tateti.component';
+//import { MatFormFieldModule, MatInputModule, MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS, MatProgressBarModule, MatIconModule, MatProgressSpinnerModule, MatCardModule, MatDialogModule, MatSlideToggleModule } from '@angular/material';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,13 +94,20 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
     JugadoresListadoComponent,
     InputJugadoresComponent,
     SexoPipe,
-    InicioComponent
+    InicioComponent,
+    TatetiComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RuteandoModule,
     HttpClientModule,
+    MatSnackBarModule,
+    MatGridListModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
     })
@@ -94,7 +115,7 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)
   ],
-  providers: [ JuegoServiceService, MiHttpService,PaisesService,ArchivosJugadoresService,JugadoresService],
+  providers: [ JuegoServiceService, MiHttpService,PaisesService,ArchivosJugadoresService,JugadoresService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
