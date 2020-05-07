@@ -1,6 +1,7 @@
 
 import { Component, OnInit , Input, EventEmitter} from '@angular/core';
-
+import { Usuario } from '../../clases/usuario';
+import { AuthFirebaseService } from '../../servicios/auth-firebase.service';
 @Component({
   selector: 'app-listado-de-resultados',
   templateUrl: './listado-de-resultados.component.html',
@@ -8,18 +9,21 @@ import { Component, OnInit , Input, EventEmitter} from '@angular/core';
 })
 export class ListadoDeResultadosComponent implements OnInit {
  @Input()
- listado: Array<any>;
+ usuarios: Usuario[] = [];
+  usuario: Usuario;
 
 
-  constructor() {
+  constructor(public usuarioService: AuthFirebaseService) {
    }
 
   ngOnInit() {
-
+    this.usuarioService.getUsuario()
+    .subscribe (resp => {
+      // le asigno el array de usuarios de la BD
+      this.usuarios = resp;
+      this.usuario = this.usuarioService.user;
+    });
   }
 
-  ver() {
-    console.info(this.listado);
-  }
 
 }

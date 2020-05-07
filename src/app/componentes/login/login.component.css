@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Girassol|Josefin+Sans&display=swap');
 
+.body-login {
+    font-family: 'Roboto', sans-serif;
+    background: url(assets/imagenes/arcoiris.gif) no-repeat center center fixed;
+    background-size: cover;
+   /*background-size: 150%;*/
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
 form {
     border: 10px solid #daf107;
     padding: 5px;
@@ -28,9 +38,9 @@ button {
     width: 50%;
 }
 
-button:hover {
+/*button:hover {
     opacity: 0.8;
-}
+}*/
 
 .cancelbtn {
     width: auto;

@@ -21,27 +21,28 @@
     </div>
   </div>
 </div-->
- <div class="container">
-  <div class="jumbotron jumbotron-fluid" >
+<body class="body-login">
+  <div class="container">
+  
     <form class="form-group">
       <div class="imgcontainer">
         <h1>Bienvenido</h1>
         <img src="./assets/imagenes/login.png" alt="Avatar" class="avatar" max-width="104" >
       </div>
 
-      <div class="container">
+      <div class="container-fluid">
         <label><b>Usuario</b></label>
         <input type="text" placeholder="Ingrese su Usuario"  [(ngModel)]="email"  name="uname" required>
 
         <label><b>Clave</b></label>
         <input type="password" placeholder="Ingrese su Clave"  [(ngModel)]="password" name="psw" required>
             
-        <button class="btn" [disabled]="checkEmptyInputs()" (click)="OnSubmitLogin()"><i class="fas fa-sign-in-alt"></i>Ingresar</button><br>
+        <button type="button" class="btn btn-primary" [disabled]="checkEmptyInputs()" (click)="OnSubmitLogin()"><i class="fas fa-sign-in-alt"></i>Ingresar</button><br>
        
         <input type="checkbox" checked="checked"> Recordar mis datos
       </div>
 
-      <div class="container" style="background-color:#f1f1f1">
+      <div class="container-fluid" style="background-color:#f1f1f1">
         <button type="button" class="btn btn-danger medio">Cancelar</button>
         <button type="button" class="btn btn-success medio" routerLink="/Registro" >Registrarse</button>
         <span class="psw">Te olvidaste la clave? <a href="#">Ingrese Aqui</a></span>
@@ -64,5 +65,7 @@
     </div>
      
     </form>
-  </div>
+  
 </div>
+</body>
+ 

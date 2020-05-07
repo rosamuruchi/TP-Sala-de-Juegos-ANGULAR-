@@ -28,20 +28,17 @@
       <form class="modal-content animate" >
         <div class="container-menu">
           <label><b>Email</b></label>
-          <input type="text" placeholder="Ingresae su correo" name="email" required>
+          <input type="text" placeholder="Ingresae su correo" [(ngModel)]="user.email">
     
           <label><b>Clave</b></label>
-          <input type="password" placeholder="Ingrese su clave" name="psw" required>
-    
-          <label><b>Repita la clave</b></label>
-          <input type="password" placeholder="Repetir la clave" name="psw-repeat" required>
+          <input type="password" placeholder="Ingrese su clave" [(ngModel)]="user.password">
 
           <input type="checkbox" checked="checked">Recordar mis datos
           <p>Acepto los<a  onclick="document.getElementById('id01').style.display='none'"  >Terminos y condiciones</a>.</p>
 
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" onclick="document.getElementById('id01').style.display='none'" >Cerrar</button>
-            <button type="submit" class="btn btn-primary">Registrarme</button>
+            <button type="button" class="btn btn-primary" (click)="onRegister()">Registrarme</button>
           </div>
         </div>
       </form>

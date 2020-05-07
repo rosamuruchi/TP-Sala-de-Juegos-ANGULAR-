@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthFirebaseService } from '../../servicios/auth-firebase.service';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-cabecera',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CabeceraComponent implements OnInit {
 
-  constructor() { }
+  constructor(auth: AuthFirebaseService, router: Router) { }
 
   ngOnInit() {
   }
+
+ 
 
 }

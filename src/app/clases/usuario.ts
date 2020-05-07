@@ -6,5 +6,5 @@ export class Usuario {
     nombre: string;
     puntajetateti: number;
     puntajeanagrama: number;
-    puntajemoneda: number;
+    puntajepelotita: number;
 }

@@ -10,15 +10,18 @@
       <tr class="table-sucess">
         <th>Juego</th>
         <th>Jugador</th>
-        <th>Resultado</th>
+        <th>Puntaje TA-TE-TI</th>
+        <th>Puntaje Anagrama</th>
+        <th>Puntaje Pelotita</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let juego of listado">
-        <td>{{juego.nombre}} </td>
-        <td>{{juego.jugador}} </td> 
-        <td *ngIf="juego.gano">Gano </td>   
-        <td *ngIf="!juego.gano">Perdio</td>     
+      <tr>
+        <td>{{usuario.email}} </td>
+        <td>{{usuario.puntajetateti}}</td> 
+        <td>{{usuario.puntajeanagrama}}</td> 
+        <td>{{usuario.puntajepelotita}}</td>  
       </tr>
      
     </tbody>

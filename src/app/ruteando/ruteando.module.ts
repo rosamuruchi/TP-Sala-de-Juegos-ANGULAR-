@@ -23,8 +23,17 @@ import { MapaDeGoogleComponent } from '../componentes/mapa-de-google/mapa-de-goo
 import { JugadoresListadoComponent } from '../componentes/jugadores-listado/jugadores-listado.component';
 import { AnagramaComponent } from '../componentes/anagrama/anagrama.component';
 import { TatetiComponent } from '../componentes/tateti/tateti.component';
+import { MemoryComponent } from '../componentes/memory/memory.component';
+import { PptComponent } from '../componentes/ppt/ppt.component';
+
 // declaro donde quiero que se dirija
 const MiRuteo: Routes = [
+{
+  path: '',
+    redirectTo : 'Login',
+    // component: HomeComponent,
+    pathMatch: 'full'
+},
 {path: 'Jugadores' , component: JugadoresListadoComponent},
 {path: '' , component: PrincipalComponent},
 {path: 'Login' , component: LoginComponent},
@@ -34,6 +43,7 @@ const MiRuteo: Routes = [
 {path: 'Principal' , component: PrincipalComponent},
 {path: 'Listado' , component: ListadoComponent},
 {path: 'Paises' , component: ListadoDePaisesComponent},
+{path: 'Resultados', component: ListadoDeResultadosComponent},
 
 { path: 'Juegos' ,
 component: JuegosComponent ,
@@ -45,7 +55,9 @@ children:
       {path: 'AgilidadaMasListado' , component: AgilidadMasListadoComponent},
       {path: 'Agilidad' , component: AgilidadAritmeticaComponent},
       {path: 'Anagrama' , component: AnagramaComponent},
-      {path: 'Tateti' , component: TatetiComponent}
+      {path: 'Tateti' , component: TatetiComponent},
+      {path: 'Memory' , component: MemoryComponent },
+      {path: 'PPT' , component: PptComponent}
     ]
 },
 {path: '**' , component: ErrorComponent},

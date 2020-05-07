@@ -19,6 +19,16 @@ export class AuthFirebaseService {
   private url = 'https://saladejuegos-c3f57.firebaseio.com';
 
   constructor(public afAuth: AngularFireAuth, public http:HttpClient) { }
+
+  onRegister(user:Usuario) {
+    return new Promise((resolve, rejected) => {
+
+      this.afAuth.createUserWithEmailAndPassword (user.email, user.password).then(us => {
+        resolve(us);
+      }).catch(err => rejected(err));
+    });
+
+  }
    
   login(email: string, password: string) {
     return new Promise((resolve, rejected) => {
@@ -69,6 +79,9 @@ export class AuthFirebaseService {
   
     }
 
+    
+
+
 }
   /*loginEmailUser(email: string, password: string) {
     return new Promise((resolve, reject) => {
@@ -80,13 +93,7 @@ export class AuthFirebaseService {
   }
   logOut() {
     return this.afAuth.auth.signOut();
-  }
-
-  registerEmailUser(email: string, passowrd: string) {
-    return new Promise((resolve, reject) => {
-      this.afAuth.createUserWithEmailAndPassword(email, passowrd).
-          then(userData => resolve(userData),
-          err => reject(err));
-    });
   }*/
+
+  
 

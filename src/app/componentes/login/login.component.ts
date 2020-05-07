@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.email, this.password).then(res => {
       this.authService.user.email = this.email;
       
-      this.router.navigate(['/home/descripcion']);
+      this.router.navigate(['/Principal']);
       
     // }).catch(err => alert('Los datos son incorrectos o no existe el usuario') );
   }).catch(err => this.ngValidarError(err.code));

@@ -11,7 +11,7 @@ export class ListadoComponent implements OnInit {
    miServicioJuego:JuegoServiceService
 
   constructor(servicioJuego:JuegoServiceService) {
-    this.miServicioJuego = servicioJuego;
+   // this.miServicioJuego = servicioJuego;
     
   }
   

@@ -66,6 +66,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { TatetiComponent } from './componentes/tateti/tateti.component';
+import { MemoryComponent } from './componentes/memory/memory.component';
+import { PptComponent } from './componentes/ppt/ppt.component';
 //import { MatFormFieldModule, MatInputModule, MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS, MatProgressBarModule, MatIconModule, MatProgressSpinnerModule, MatCardModule, MatDialogModule, MatSlideToggleModule } from '@angular/material';
 
 
@@ -95,7 +97,9 @@ import { TatetiComponent } from './componentes/tateti/tateti.component';
     InputJugadoresComponent,
     SexoPipe,
     InicioComponent,
-    TatetiComponent
+    TatetiComponent,
+    MemoryComponent,
+    PptComponent
   ],
   imports: [
     BrowserModule,
