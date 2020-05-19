@@ -30,6 +30,8 @@ export class MemoryComponent implements OnInit {
   ngOnInit(): void {
     this.usuario = this.usuarioService.user;
     this.nombre = this.usuarioService.user.nombre;
+    console.log(this.usuario);
+    console.log(this.usuario.nombre);
   }
 
   OnClickIzquierda() {

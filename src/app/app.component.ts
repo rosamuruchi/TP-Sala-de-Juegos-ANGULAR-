@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
-  /*title = 'tp';
+  title = 'tp';
   email: string;
   password: string;
 
@@ -69,5 +69,5 @@ export class AppComponent {
   // cuando doy click al icono de "x" para cerrarlo 
   noMostrarAlert() {
     this.mostrarAlert = false;
-  }*/
+  }
 }

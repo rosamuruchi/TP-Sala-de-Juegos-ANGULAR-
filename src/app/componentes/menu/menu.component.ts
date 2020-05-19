@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { AuthFirebaseService } from '../../servicios/auth-firebase.service';
 
 @Component({
   selector: 'app-menu',
@@ -8,7 +9,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute,
+  constructor(public authService: AuthFirebaseService,private route: ActivatedRoute,
     private router: Router) { }
 
   ngOnInit() {
@@ -16,11 +17,11 @@ export class MenuComponent implements OnInit {
 
   Juego(tipo: string) {
     switch (tipo) {
-      case 'Adivina':
-          this.router.navigate(['/Juegos/Adivina']);
+      case 'Pelotita':
+          this.router.navigate(['/Juegos/Pelotita']);
         break;
-      case 'Agilidad':
-          this.router.navigate(['/Juegos/Agilidad']);
+      case 'Tateti':
+          this.router.navigate(['/Juegos/Tateti']);
         break;
       case 'Anagrama':
           this.router.navigate(['/Juegos/Anagrama']);

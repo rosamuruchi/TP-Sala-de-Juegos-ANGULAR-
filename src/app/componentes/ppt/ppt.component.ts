@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../clases/usuario';
 import { AuthFirebaseService } from '../../servicios/auth-firebase.service';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-ppt',
@@ -18,7 +19,16 @@ export class PptComponent implements OnInit {
   claseBtnUsuario:string;
   claseBtnMaquina:string;
 
-  constructor() {
+  usuario: Usuario;
+  nombre = '';
+  contadorPierde = 0;
+  contadorGana = 0;
+  mostrarAlert = false;
+  mensajeAlert = '';
+
+  constructor(public usuarioService: AuthFirebaseService) {
+    this.usuario = this.usuarioService.user;
+    this.nombre = this.usuarioService.user.nombre;
     this.opcionMaquina = "";
     this.opcionUsuario = "";
     this.terminoJuego = false;
@@ -52,15 +62,21 @@ export class PptComponent implements OnInit {
     if(this.opcionUsuario == this.opcionMaquina) {
       this.gano = false;
       this.resultado = 'EMPATE';
+      this.mostrarAlerta(`Empate!! (no pierdes ni ganas)${this.usuario.nombre}!`);
     }
     else
     {
       switch(this.opcionUsuario) {
         case 'piedra':
           if(this.opcionMaquina == 'tijera') {
+            this.mostrarAlerta(`Has adivinado (ganas)${this.usuario.nombre}!`);
             this.gano = true;
-            this.resultado = 'GANASTE'
+            this.resultado = 'GANASTE';
+            this.usuario.puntajeppt=this.usuario.puntajeppt+1;
+            this.actualizarUsuario();
+            this.contadorGana ++;
           } else {
+            this.mostrarAlerta(`No has adivinado (pierdes) ${this.usuario.nombre}!`);
             this.gano = false;
             this.resultado = 'PERDISTE'
           }
@@ -68,9 +84,14 @@ export class PptComponent implements OnInit {
 
         case 'papel':
           if(this.opcionMaquina == 'piedra') {
+            this.mostrarAlerta(`Has adivinado (ganas)${this.usuario.nombre}!`);
             this.gano = true;
-            this.resultado = 'GANASTE'
+            this.resultado = 'GANASTE';
+            this.usuario.puntajeppt=this.usuario.puntajeppt+1;
+            this.actualizarUsuario();
+            this.contadorGana ++;
           } else {
+            this.mostrarAlerta(`No has adivinado (pierdes) ${this.usuario.nombre}!`);
             this.gano = false;
             this.resultado = 'PERDISTE'
           }
@@ -78,9 +99,14 @@ export class PptComponent implements OnInit {
 
         case 'tijera':
           if(this.opcionMaquina == 'papel') {
+            this.mostrarAlerta(`Has adivinado (ganas)${this.usuario.nombre}!`);
             this.gano = true;
-            this.resultado = 'GANASTE'
+            this.resultado = 'GANASTE';
+            this.usuario.puntajeppt=this.usuario.puntajeppt+1;
+            this.actualizarUsuario();
+            this.contadorGana ++;
           } else {
+            this.mostrarAlerta(`No has adivinado (pierdes) ${this.usuario.nombre}!`);
             this.gano = false;
             this.resultado = 'PERDISTE'
           }
@@ -88,6 +114,23 @@ export class PptComponent implements OnInit {
       }
     }
     this.terminoJuego = true;
+  }
+
+  // muestro el alert
+  mostrarAlerta(err) {
+    this.mostrarAlert = true;
+    this.mensajeAlert = err;
+  }
+
+  // cuando doy click al icono de "x" para cerrarlo 
+  noMostrarAlert() {
+    this.mostrarAlert = false;
+  }
+
+  actualizarUsuario() {
+    this.usuarioService.actualizarUsuario(this.usuario)
+    .subscribe ( resp => {
+    });
   }
 
 }

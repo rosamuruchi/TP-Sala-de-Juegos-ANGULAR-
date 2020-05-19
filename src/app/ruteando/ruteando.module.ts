@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { AdivinaElNumeroComponent } from '../componentes/adivina-el-numero/adivina-el-numero.component';
 import { ListadoDeResultadosComponent } from '../componentes/listado-de-resultados/listado-de-resultados.component';
+
 import { LoginComponent } from '../componentes/login/login.component';
 import { ErrorComponent } from '../componentes/error/error.component';
 import { PrincipalComponent } from '../componentes/principal/principal.component';
@@ -34,13 +35,14 @@ const MiRuteo: Routes = [
     // component: HomeComponent,
     pathMatch: 'full'
 },
+{path: 'Principal' , component: PrincipalComponent},
 {path: 'Jugadores' , component: JugadoresListadoComponent},
 {path: '' , component: PrincipalComponent},
 {path: 'Login' , component: LoginComponent},
 {path: 'Mapa' , component: MapaDeGoogleComponent},
 {path: 'QuienSoy' , component: QuienSoyComponent},
 {path: 'Registro' , component: RegistroComponent},
-{path: 'Principal' , component: PrincipalComponent},
+
 {path: 'Listado' , component: ListadoComponent},
 {path: 'Paises' , component: ListadoDePaisesComponent},
 {path: 'Resultados', component: ListadoDeResultadosComponent},
@@ -56,8 +58,9 @@ children:
       {path: 'Agilidad' , component: AgilidadAritmeticaComponent},
       {path: 'Anagrama' , component: AnagramaComponent},
       {path: 'Tateti' , component: TatetiComponent},
-      {path: 'Memory' , component: MemoryComponent },
-      {path: 'PPT' , component: PptComponent}
+      {path: 'Pelotita' , component: MemoryComponent },
+      {path: 'PPT' , component: PptComponent},
+      
     ]
 },
 {path: '**' , component: ErrorComponent},

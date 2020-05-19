@@ -1,29 +1,30 @@
-<ul class="nav nav-tabs bg-dark text-light">
-  <li class="nav-link"><a routerLink="/Principal">Ir a inicio</a></li>
-  <li><a class="nav-link" (click)="TraerTodos()">Todos los jugadores</a></li>
-  <li><a class="nav-link" (click)="TraerGanadores()">Los ganadores</a></li>
-  <li><a class="nav-link" (click)="TraerPerdedores()">Los perdedores</a></li>
-</ul>
 
 
 
-<table class="table table-dark">
-  <thead>
-    <tr class="table-sucess">
-      <th>usuario</th>
-      <th>cuit</th>
-      <th>sexo</th>
-      <th>gano</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let jugador of listado" >
-      <td>{{jugador.usuario}} </td>
-      <td>{{jugador.cuit}} </td> 
-      <td>{{jugador.sexo | sexo| uppercase}} </td> 
-      <td>{{jugador.gano}} </td> 
-      
-    </tr>
-   
-  </tbody>
-</table>
+
+<div style="background-color: rgb(205, 63, 139)">
+  <div class="container-fluid">
+    <h1 >Puntajes de todos los Usuarios:</h1><br>
+    <div class="table-responsive">
+      <table class="table table-dark">
+        <thead>
+          <tr class="table-sucess">
+            
+            <th>Email</th>
+            <th>Nombre</th>
+            <th>Sexo</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let usuario of usuarios">
+            <td>{{usuario.email}} </td>
+            <td>{{usuario.nombre}}</td> 
+            <td>{{usuario.sexo}}</td> 
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

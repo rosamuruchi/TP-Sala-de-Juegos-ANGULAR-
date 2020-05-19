@@ -32,10 +32,10 @@
 
       <div class="container-fluid">
         <label><b>Usuario</b></label>
-        <input type="text" placeholder="Ingrese su Usuario"  [(ngModel)]="email"  name="uname" required>
+        <input type="text" placeholder="admin@admin.com"  [(ngModel)]="email"  name="uname" required>
 
         <label><b>Clave</b></label>
-        <input type="password" placeholder="Ingrese su Clave"  [(ngModel)]="password" name="psw" required>
+        <input type="password" placeholder="111111"  [(ngModel)]="password" name="psw" required>
             
         <button type="button" class="btn btn-primary" [disabled]="checkEmptyInputs()" (click)="OnSubmitLogin()"><i class="fas fa-sign-in-alt"></i>Ingresar</button><br>
        
@@ -67,5 +67,13 @@
     </form>
   
 </div>
+
+<footer class="footer">
+  <br>
+  <p>Creado por: Rosa Muruchi</p>
+  <p>Contactarse con: <a href="https://es-la.facebook.com/" target="_blank" style="color: orange">
+          rosa.muruchilaura@gmail.com</a>.</p><br>
+</footer>
 </body>
+
  

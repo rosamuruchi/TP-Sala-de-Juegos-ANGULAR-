@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthFirebaseService } from '../../servicios/auth-firebase.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-juegos',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JuegosComponent implements OnInit {
 
-  constructor() { }
+  constructor(public authService: AuthFirebaseService, public router: Router) { }
 
   ngOnInit() {
   }
-
+  desloguarse() {
+    this.router.navigate(['/inicio']);
+    this.authService.desloguearse().then(res => {
+       console.log(res);
+       
+    }).catch(err => console.log(err));
+  }
 }

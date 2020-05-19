@@ -8,7 +8,7 @@ import { AuthFirebaseService } from '../../servicios/auth-firebase.service';
   styleUrls: ['./listado-de-resultados.component.css']
 })
 export class ListadoDeResultadosComponent implements OnInit {
- @Input()
+ 
  usuarios: Usuario[] = [];
   usuario: Usuario;
 

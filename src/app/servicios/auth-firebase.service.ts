@@ -1,5 +1,4 @@
 import { Injectable, NgZone } from '@angular/core';
-import { auth } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore';
 
@@ -16,7 +15,7 @@ export class AuthFirebaseService {
   public user = new Usuario();
 
 
-  private url = 'https://saladejuegos-c3f57.firebaseio.com';
+  private url = 'https://saladejuegos-c3f57.firebaseio.com';//'https://saladejuegos-c3f57.firebaseio.com';
 
   constructor(public afAuth: AngularFireAuth, public http:HttpClient) { }
 
