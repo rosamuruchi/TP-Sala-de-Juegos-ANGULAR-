@@ -9,6 +9,8 @@ import { timer } from 'rxjs';
   styleUrls: ['./ppt.component.css']
 })
 export class PptComponent implements OnInit {
+  usuarios: Usuario[] = [];
+
 
   terminoJuego:boolean;
   gano:boolean;
@@ -35,7 +37,24 @@ export class PptComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.usuarioService.getUsuario()
+    .subscribe (resp => {
+      // le asigno el array de usuarios de la BD
+      this.usuarios = resp;
+
+      // busco los datos del usuario que se logueo y los guardo en el atributo "usuario"
+      this.obtenerUsuario(this.usuarioService.user.email);
+      console.log(this.usuarioService.user);
+
+    });
   }
+  obtenerUsuario(email) {
+    this.usuarios.forEach(user => {
+      if (user.email === email) {
+        this.usuarioService.user = user;
+      }
+    });
+ }
 
   //Asigna la opción que eligió el usuario
   ElegirOpcion(opcion:string) {

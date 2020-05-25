@@ -27,10 +27,18 @@ export class JugadoresListadoComponent implements OnInit {
       // le asigno el array de usuarios de la BD
       this.usuarios = resp;
       this.usuario = this.usuarioService.user;
+      this.obtenerUsuario(this.usuarioService.user.email);
+      console.log(this.usuarioService.user);
     });
   }
 
-
+  obtenerUsuario(email) {
+    this.usuarios.forEach(user => {
+      if (user.email === email) {
+        this.usuarioService.user = user;
+      }
+    });
+ }
  /* TraerTodos(){
     //alert("totos");
     this.miJugadoresServicio.traertodos('jugadores/','todos').then(data=>{

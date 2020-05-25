@@ -16,7 +16,7 @@ export class ListadoComponent implements OnInit {
   }
   
   ngOnInit() {
-    
+    console.log("aqui");
   }
 
   llamaService(){

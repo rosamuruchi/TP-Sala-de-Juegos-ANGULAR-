@@ -47,6 +47,7 @@ const MiRuteo: Routes = [
 {path: 'Paises' , component: ListadoDePaisesComponent},
 {path: 'Resultados', component: ListadoDeResultadosComponent},
 
+
 { path: 'Juegos' ,
 component: JuegosComponent ,
 children:
@@ -60,7 +61,7 @@ children:
       {path: 'Tateti' , component: TatetiComponent},
       {path: 'Pelotita' , component: MemoryComponent },
       {path: 'PPT' , component: PptComponent},
-      
+      {path: 'Resultados', component: ListadoDeResultadosComponent},
     ]
 },
 {path: '**' , component: ErrorComponent},
