@@ -19,13 +19,12 @@ import { RegistroComponent } from '../componentes/registro/registro.component';
 import { MenuCardComponent } from '../componentes/menu-card/menu-card.component';
 import { CabeceraComponent } from '../componentes/cabecera/cabecera.component';
 import { QuienSoyComponent } from '../componentes/quien-soy/quien-soy.component'
-import { ListadoDePaisesComponent } from '../componentes/listado-de-paises/listado-de-paises.component'
-import { MapaDeGoogleComponent } from '../componentes/mapa-de-google/mapa-de-google.component'
 import { JugadoresListadoComponent } from '../componentes/jugadores-listado/jugadores-listado.component';
 import { AnagramaComponent } from '../componentes/anagrama/anagrama.component';
 import { TatetiComponent } from '../componentes/tateti/tateti.component';
 import { MemoryComponent } from '../componentes/memory/memory.component';
 import { PptComponent } from '../componentes/ppt/ppt.component';
+import { AuthGuard } from '../guards/auth.guard';
 
 // declaro donde quiero que se dirija
 const MiRuteo: Routes = [
@@ -35,21 +34,18 @@ const MiRuteo: Routes = [
     // component: HomeComponent,
     pathMatch: 'full'
 },
-{path: 'Principal' , component: PrincipalComponent},
-{path: 'Jugadores' , component: JugadoresListadoComponent},
-{path: '' , component: PrincipalComponent},
+{path: 'Principal' , component: PrincipalComponent,canActivate:[AuthGuard]},
+{path: 'Jugadores' , component: JugadoresListadoComponent,canActivate:[AuthGuard]},
+{path: '' , component: PrincipalComponent,canActivate:[AuthGuard]},
 {path: 'Login' , component: LoginComponent},
-{path: 'Mapa' , component: MapaDeGoogleComponent},
-{path: 'QuienSoy' , component: QuienSoyComponent},
+{path: 'QuienSoy' , component: QuienSoyComponent,canActivate:[AuthGuard]},
 {path: 'Registro' , component: RegistroComponent},
+{path: 'Listado' , component: ListadoComponent,canActivate:[AuthGuard]},
 
-{path: 'Listado' , component: ListadoComponent},
-{path: 'Paises' , component: ListadoDePaisesComponent},
-{path: 'Resultados', component: ListadoDeResultadosComponent},
-
+{path: 'Resultados', component: ListadoDeResultadosComponent, canActivate:[AuthGuard]},
 
 { path: 'Juegos' ,
-component: JuegosComponent ,
+component: JuegosComponent ,canActivate:[AuthGuard],
 children:
      [
        {path: '' , component: MenuCardComponent},

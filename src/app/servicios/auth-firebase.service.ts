@@ -78,7 +78,10 @@ export class AuthFirebaseService {
   
     }
 
-    
+    async UsuarioLogeado()
+    {
+      return await this.afAuth.currentUser;
+    }
 
 
 }

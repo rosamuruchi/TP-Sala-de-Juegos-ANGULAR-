@@ -5,6 +5,17 @@ width: 80px;
 height: 100px;
 }
 
+.container-port{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
+
 .hero-text {
     text-align: center;
     position: absolute;
@@ -21,11 +32,6 @@ height: 100px;
     .texto {
         margin-left: 2rem;
     }
-    
-    /*a {
-        color: #f51313;
-        text-decoration: none;
-    }*/
     
     .col-12
     {
